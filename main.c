@@ -31,5 +31,13 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+    _printf("");
+    printf("");
+    _printf("%c", 0);
+    printf("%c", 0);
+    _printf("100%%");
+    printf("100%%");
+    _printf("%s", NULL);
+    printf("%s", NULL);
     return (0);
 }

@@ -24,7 +24,7 @@ void print_char(va_list *ap, int *count_T)
 void print_string(va_list *ap, int *count_T)
 {
 	char *str = va_arg(*ap, char *);
-	char *nil = "(Nil)";
+	char *nil = "(null)";
 	int count1 = 0, count2 = 0;
 	
 	while (nil[count1])
