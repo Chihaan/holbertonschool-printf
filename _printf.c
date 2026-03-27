@@ -19,15 +19,21 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0;
 	va_list ap;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(ap, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			if (!format[i])
-    				break;
+			{
+				va_end(ap);
+				return (-1);
+			}
 			j = 0;
 			while (fs[j].formats != NULL)
 			{
