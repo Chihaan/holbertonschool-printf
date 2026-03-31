@@ -16,7 +16,9 @@ typedef struct formats
 void print_char(va_list *ap, int *count_T);
 void print_string(va_list *ap, int *count_T);
 void print_pourcent(va_list *ap, int *count_T);
+void print_integer(va_list *ap, int *count_T);
 int _putchar(char c);
 int _printf(const char *format, ...);
+void print_recursive(int d, int *count_T);
 
 #endif

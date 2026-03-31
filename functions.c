@@ -54,13 +54,39 @@ void print_pourcent(va_list *ap, int *count_T)
 	*count_T += 1;
 }
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * print_integer - Prints an integer
+ * @ap: The argument
+ * @count_T: Total printed chars
+ * Return: Nothing
  */
-int _putchar(char c)
+void print_integer(va_list *ap, int *count_T)
 {
-	return (write(1, &c, 1));
+	int d = va_arg(*ap, int);
+
+	if (d == -2147483648)
+	{
+   		write(1, "-2147483648", 11);
+   		*count_T += 11;
+   		return;
+	}
+	if (d < 0)
+	{
+		_putchar('-');
+		*count_T += 1;
+		d = -d;
+	}
+	print_recursive(d, count_T);
+}
+/**
+ * print_recursive - Prints an integer to char
+ * @d: the integer
+ * @count_T: the counter
+ * Return: Nothing
+ */
+void print_recursive(int d, int *count_T)
+{
+	if (d / 10)
+		print_recursive(d / 10, count_T);
+	_putchar(d % 10 + '0');
+	*count_T += 1;
 }
