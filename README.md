@@ -12,25 +12,43 @@ int _printf(const char *format, ...);
 
 -- Requirements --
 
-Ubuntu 20.04 LTS
+Allowed editors: vi, vim, emacs
 
-gcc with the flags: -Wall -Werror -Wextra -pedantic -std=gnu89
+All files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 
-No global variables
+All files should end with a new line
 
-At most 5 functions per file
+A README.md file, at the root of the folder of the project is mandatory
 
-Betty style compliance
+Your code should use the Betty style
 
-Header file main.h must contain all prototypes
+You are not allowed to use global variables
+
+No more than 5 functions per file 
+
+main.c files might be different from the one shown in the examples
+
+The prototypes of all your functions should be included in your header file called main.h
+
+All header files should be include guarded
 
 -- Features --
 
 %s - String ; %% - Percent sign ; %d - Decimal integer ; %i - integer And prints characters, strings and integers.
 
+-- Authorized functions and macros --
+
+write (man 2 write)
+malloc (man 3 malloc)
+free (man 3 free)
+va_start (man 3 va_start)
+va_end (man 3 va_end)
+va_copy (man 3 va_copy)
+va_arg (man 3 va_arg)
+
 -- Files --
 
-README.md ;  _printf.c - primary function for the parsing ; main.h - Header file functions.c ; - The print functions (%c for char, %s for string, %% for percent) ; print_numbers.c - The print functions (%d, %i for int) ; man_3_printf - Man page of _printf
+README.md - The global description of printf project ; _printf.c - Principal function for the parsing ; main.h - Header file ; functions.c - Display functions (print_char, print_string, print_pourcent, print_integer, print_recursive) ; main.c - Test file ; _putchar.c - Utility function
 
 -- Compilation --
 
@@ -38,9 +56,7 @@ README.md ;  _printf.c - primary function for the parsing ; main.h - Header file
 
 -- Return Value --
 
-The function returns the number of characters printed (excluding the null byte).
-
--- Example Usage -- _printf("Hello %s!\n", "world"); _printf("Number: %d\n", 42); _printf("Percent: %%\n");
+The function returns the number of characters printed (excluding the null byte)
 
 -- Authors --
 
